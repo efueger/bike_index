@@ -71,7 +71,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            mkdir -p test-results test-results/rspec test-artifacts
+            mkdir -p test-results/rspec test-artifacts
             ./cc-test-reporter before-build
             TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             bundle exec rspec --profile 10 \
@@ -91,5 +91,5 @@ jobs:
           path: test-artifacts
       - deploy:
           command: |
-            ./cc-test-reporter sum-coverage --output - --parts $CIRCLE_NODE_TOTAL coverage/codeclimate.*.json | ./cc-test-reporter upload-coverage --debug --input -
+            ./cc-test-reporter sum-coverage --output - --parts 1 coverage/codeclimate.*.json | ./cc-test-reporter upload-coverage --debug --input -
 
