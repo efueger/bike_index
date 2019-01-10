@@ -7,7 +7,7 @@ jobs:
     environment:
       RAILS_ENV: test
       RACK_ENV: test
-      CC_TEST_REPORTER_ID: 04daa6564351115dc1515504790cd379ad8dc25e7778f0641e0f8c63185f887c
+      CC_TEST_REPORTER_ID: 03093a29febf89546e30444f8f2bed9c1900d22b2b6d4562f1a2435d1edb8f32
       COVERAGE: true
     docker:
       - image: circleci/ruby:2.5.1-stretch-node
