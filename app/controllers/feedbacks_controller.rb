@@ -34,13 +34,7 @@ class FeedbacksController < ApplicationController
 
   protected
 
-  def block_the_spam!
-    # Previously, we were authenticating users in a before_filter
-    # But to make it possible for non-signed in users to generate leads, we're trying this out
-    return false unless params[:feedback] && params[:feedback][:additional].present?
-    flash[:error] = 'Please sign in to send that message'
-    redirect_to feedbacks_path(anchor: 'contact_us_section') and return
-  end
+  
 
 
   def permitted_parameters
